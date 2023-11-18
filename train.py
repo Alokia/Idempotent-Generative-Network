@@ -20,7 +20,7 @@ def main(args, conf):
 
     for epoch in range(start_epoch, args.epochs + 1):
         loss = train_one_epoch(model, model_copy, optimizer, data_loader, device, epoch, **conf.loss)
-        torch.save(model.state_dict(), 'model.pth')
+        torch.save(model.state_dict(), './checkpoints/model.pth')
 
 
 if __name__ == '__main__':

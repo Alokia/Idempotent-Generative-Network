@@ -21,6 +21,7 @@ python train.py
 ```
 
 ## generate
+model checkpoint with 370 epoch training, [download here](https://drive.google.com/file/d/1rw8yWJ4oPR_jrk848HSKQVvgah97MB8z/view?usp=sharing).
 
 These are the parameters of `generate.py`:
 * `-cp`: the path of checkpoint. default: `./checkpoints/model.pth`

@@ -1,35 +1,35 @@
 dataset:
-  name: "custom" # 使用什么数据集，目前支持 cifar10、mnist 和 custom
+  name: "custom" # what dataset is used，support cifar10, mnist and custom
 
-  # MNIST 和 CIFAR 数据集的参数
-  download: False   # 如果是 MNIST 或 CIFAR，是否下载数据集
-  train: True # 如果是 MNIST 或 CIFAR，是否使用训练集
+  # MNIST and CIFAR dataset's parameters
+  download: False   # whether to download the dataset
+  train: True # whether to use the training set
 
-  data_path: "E:/data/celeba_64"  # 数据集存放路径
+  data_path: "E:/data/celeba_64"  # the path of the dataset, if MNIST or CIFAR, this parameter is the download path
 
-  # transform 的参数
-  image_size: [ 64, 64 ]  # 图片大小
+  # transform's parameters
+  image_size: [ 64, 64 ]  # image size
 
-  # DataLoader 的参数
-  batch_size: 128  # 批大小
-  shuffle: True # 是否打乱数据
-  drop_last: True # 是否丢弃最后一个 batch
-  pin_memory: True  # 是否将数据保存在 pin memory 中
-  num_workers: 0  # 读取数据的线程数
+  # DataLoader's parameters
+  batch_size: 128  # batch size
+  shuffle: True # whether to shuffle the dataset
+  drop_last: True # whether to drop the last batch
+  pin_memory: True  # whether to use pin memory
+  num_workers: 0  # the number of workers
 
-  # 自定义数据集的参数
-  suffix: [ "png", "jpg" ]  # 自定义数据集中加载图片的后缀名
+  # custom dataset's parameters
+  suffix: [ "png", "jpg" ]  # the suffix of the image
 
 model:
-  in_channels: 3  # 输入图片的通道数，如果是 MNIST，这里应该是 1
-  out_channels: 3 # 输出图片的通道数，如果是 MNIST，这里应该是 1
+  in_channels: 3  # input image's channel, if MNIST, this parameter is 1
+  out_channels: 3 # output image's channel, if MNIST, this parameter is 1
 
 loss:
-  a: 1.5
-  lambda_rec: 20
-  lambda_idem: 20
-  lambda_tight: 2.5
+  a: 1.5  # the parameter of the smooth loss in paper
+  lambda_rec: 20  # the weight of the reconstruction loss in paper
+  lambda_idem: 20 # the weight of the idempotent loss in paper
+  lambda_tight: 2.5 # the weight of the tighten loss in paper
 
 optimizer:
-  lr: 0.0001
-  betas: [ 0.5, 0.999 ]
+  lr: 0.0001  # learning rate
+  betas: [ 0.5, 0.999 ] # the betas of Adam optimizer

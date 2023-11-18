@@ -1,0 +1,7 @@
+torch~=2.0.1+cu117
+omegaconf~=2.0.6
+torchvision~=0.15.2+cu117
+pillow~=9.4.0
+tqdm~=4.64.1
+pathlib2~=2.3.7.post1
+argparse~=1.4.0
